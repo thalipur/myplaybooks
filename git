@@ -1,3 +1,3 @@
 git add -A
-git commit -m "Made change on - $(date +%C)"
+git commit -m "Made change on - $(date +%c)"
 git push origin master
