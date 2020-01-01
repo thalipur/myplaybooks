@@ -1,0 +1,10 @@
+---
+- name: Installing Java
+  hosts: test
+  tasks:
+   - name: install java
+     package: 
+      name: java-11-openjdk-devel
+      state: present
+     become: true
+     become_method: sudo

@@ -1,0 +1,28 @@
+---
+- name: Installing Apacke Tomcat Server
+  hosts: test
+  become: true
+  tasks: 
+   - name: Installing Apache Tomcat
+     get_url: 
+        url: http://mirrors.estointernet.in/apache/tomcat/tomcat-9/v9.0.30/bin/apache-tomcat-9.0.30.tar.gz
+        dest: /usr/local/
+
+   - name: unarchive
+     unarchive:
+       src: /usr/local/apache-tomcat-9.0.30.tar.gz
+       dest: /usr/local/
+       remote_src: yes
+
+   - name: Moving  /usr/local/apache-tomcat-9.0.30 to /usr/local/tomcat9
+     command: mv /usr/local/apache-tomcat-9.0.30 /usr/local/tomcat9
+
+   - name: updating env variable
+     command: echo "export CATALINA_HOME="/usr/local/tomcat9"" >> /home/ansadm/.bashrc
+
+   - name: sourceing 
+     command: source /home/ansadm/.bashrc
+
+   - name: running apache tomact server
+     command: /usr/local/tomcat9/bin/startup.sh
+
