@@ -1,0 +1,136 @@
+    1  ls
+    2  cd
+    3  ssh-keygen 
+    4  ssh-copy-id 34.67.45.159
+    5  ssh 34.67.45.159
+    6  ssh-copy-id 34.67.45.159
+    7  ssh-copy-id ansadm34.67.45.159
+    8  ssh-copy-id ansadm@34.67.45.159
+    9  ssh 34.67.45.159
+   10  ssh-copy-id ansadm@34.67.45.159
+   11  sudo vim /etc/ssh/sshd_config 
+   12  ssh 34.67.45.159
+   13  ls
+   14  ls - l
+   15  cd
+   16  ls
+   17  ls -l
+   18  pwd
+   19  ping 34.67.45.159
+   20  su
+   21  cd
+   22  ls -la
+   23  cd ./.ssh/
+   24  ls
+   25  cat id_rsa.pub 
+   26  git clone git@github.com:thalipur/myplaybooks.git
+   27  ls
+   28  cd myplaybooks/
+   29  lsd
+   30  ls
+   31  vim http.yml 
+   32  ls -la /etc/ansible/
+   33  chmod -R 775 /etc/ansible/
+   34  sudo chmod -R 775 /etc/ansible/
+   35  ls -la /etc/ansible/
+   36  ls -l /etc/ansible/roles/
+   37  sudo chmod -R 664 /etc/ansible/ansible.cfg 
+   38  sudo chmod -R 664 /etc/ansible/hosts 
+   39  ls -l /etc/ansible/
+   40  ls -l
+   41  ansible-playbook http.yml 
+   42  vim http.yml 
+   43  ansible-playbook http.yml C
+   44  ansible-playbook http.yml
+   45  vim http.yml 
+   46  vim http.yml  --check
+   47  ansible-playbook http.yml --check
+   48  cat http.yml 
+   49  vi http.yml 
+   50  ansible-playbook http.yml
+   51  vi http.yml 
+   52  ansible-playbook http.yml
+   53  vim http.yml 
+   54  ansible-playbook http.yml
+   55  vim http.yml 
+   56  ansible-playbook http.yml
+   57  vim http.yml 
+   58  ansible-playbook http.yml
+   59  ls
+   60  mv http.yml java.yml
+   61  ls -l
+   62  java-version
+   63  vim http.yml
+   64  ansible-playbook http.yml 
+   65  vim http.yml
+   66  ansible-playbook http.yml 
+   67  vim http.yml
+   68  ansible-playbook http.yml 
+   69  ls
+   70  vi unarchive.yml
+   71  ansible-playbook unarchive.yml 
+   72  vi unarchive.yml
+   73  ansible-playbook unarchive.yml 
+   74  vi unarchive.yml
+   75  ansible-playbook unarchive.yml 
+   76  ls
+   77  vim unarchive.yml 
+   78  vim http.yml 
+   79  ansible-playbook http.yml 
+   80  vi http.yml 
+   81  ansible-playbook http.yml 
+   82  vi http.yml 
+   83  ansible-playbook http.yml 
+   84  vi http.yml 
+   85  ansible-playbook http.yml 
+   86  exit
+   87  lcd
+   88  cd
+   89  cd my
+   90  ls
+   91  pwd
+   92  ls -l
+   93  history
+   94  cd 
+   95  cd /etc/ssh
+   96  ls
+   97  ls -l
+   98  cd ..
+   99  ls
+  100  cd 
+  101  ls -l
+  102  cd ..
+  103  ls
+  104  cd ashok
+  105  sudo ls -l ashok/
+  106  cd /etc/ans
+  107  cd /etc/ansible/
+  108  ls
+  109  cd roles/
+  110  ls
+  111  cd ..
+  112  ls
+  113  ls-l
+  114  ls -l
+  115  cd ..
+  116  cd..
+  117  cd ..
+  118  ls
+  119  cd root/
+  120  ls
+  121  ls -l
+  122  cd ..
+  123  ks
+  124  cd ans
+  125  cd home/
+  126  ls
+  127  cd ansadm/
+  128  ls
+  129  ls-la
+  130  ls -la
+  131  git clone git@github.com:thalipur/myplaybooks.git
+  132  ls
+  133  cd myplaybooks/
+  134  ls
+  135  cat http.yml 
+  136  history >>history

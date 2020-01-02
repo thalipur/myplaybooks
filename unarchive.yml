@@ -1,0 +1,11 @@
+---
+- name: unarchive
+  hosts: test
+  tasks:
+   - name: unarchive
+     unarchive:
+       src: /usr/local/apache-tomcat-9.0.30.tar.gz
+       dest: /usr/local/
+       remote_src: yes
+     become: true
+     become_method: sudo
