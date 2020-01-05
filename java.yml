@@ -1,10 +1,9 @@
 ---
-- name: Installing Java
+- name: Installing tomcat
   hosts: test
   tasks:
-   - name: install java
+   - name:
      package: 
-      name: java-11-openjdk-devel
-      state: present
-     become: true
-     become_method: sudo
+       name: jave-11-openjdk-devel
+       state: present
+

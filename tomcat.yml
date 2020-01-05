@@ -1,9 +1,46 @@
 ---
-- name: Installing tomcat
-  hosts: test
+- name: Installing Appache Tomcat on apps server
+  hosts: appserver
+  become: yes
+  become_method: sudo
+  become_user: root
   tasks:
-   - name:
-     package: 
-       name: jave-11-openjdk-devel
-       state: present
+  - name: Insallting java
+    package:
+      name: java
+      state: latest
+    tags: java
+
+  - name: downloding apache tomcat
+    get_url: 
+       url: http://us.mirrors.quenda.co/apache/tomcat/tomcat-9/v9.0.30/bin/apache-tomcat-9.0.30.tar.gz
+       dest: /usr/local
+    tags: dlapt
+ 
+  - name: Unarchive 
+    unarchive: 
+     src: /usr/local/apache-tomcat-9.0.30.tar.gz
+     dest: /usr/local/
+     remote_src: yes
+    tags: untar
+
+  - name: renam e apache-tomcat to tomcat9
+    command: mv /usr/local/apache-tomcat-9.0.30 /usr/local/tomcat9
+    tags: move
+
+  - name: configure a CATALINA_HOME environment variable
+    lineinfile: 
+        path: /home/ansadm/.bashrc
+        insertafter: EOF
+        line: "export CATALINA_HOME=/usr/local/tomcat9"
+    tags: catalina
+
+  - name: Source the variables
+    shell: source /home/ansadm/.bashrc
+    tags: source
+
+  - name:  starting tomcat server
+    shell: /usr/local/tomcat9/bin/startup.sh
+    tags: tomcat
+
 

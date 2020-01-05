@@ -1,0 +1,13 @@
+---
+- name: install jenkins using war file
+  hosts: appserver
+  become: yes
+  become_method: sudo
+  become_user: root
+  tasks:
+   - name: dowmload war file in tomcat webapps directory
+     get_url:
+       url: http://mirrors.jenkins.io/war-stable/latest/jenkins.war 
+       dest: /usr/local/tomcat9/webapps/
+
+  

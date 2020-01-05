@@ -1,0 +1,14 @@
+---
+- name: starting tomcat server
+  hosts: appserver
+  become: yes
+  become_method: sudo
+  become_user: root
+  tasks:
+   - name: sourcing bashrc
+     shell: source /home/ansadm/.bashrc
+     tags: source
+
+   - name: starting tomcat
+     shell: /usr/local/tomcat9/bin/startup.sh
+     tags: tomact

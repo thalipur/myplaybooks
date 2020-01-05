@@ -1,6 +1,9 @@
 ---
 - name: This playbook will be used to install Jenkins
-  hosts: test
+  hosts: all
+  become: true
+#  bicome_method: sudo
+  become_user: root
   tasks:
    - name: This module will install jenkins
      yum_repository:
@@ -18,6 +21,11 @@
 #       enabled: yes
      tags:
       - jenkins-install
+   - name: uninstalling jenkins
+     yum:
+       name: jenkins*
+       state: absent
+     tags: jenkins-uninstall
 
    - name: Java Installation
      yum:
