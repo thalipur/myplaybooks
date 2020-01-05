@@ -1,0 +1,9 @@
+---
+- name: PlayBook to  intall gitk tool
+  hosts: test
+  become: true
+  tasks:
+          - name: intalling git
+            yum:
+                    name: gitk
+                    state: latest
