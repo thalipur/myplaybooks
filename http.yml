@@ -2,6 +2,7 @@
 - name: Installing Apacke Tomcat Server
   hosts: test
   become: true
+  become_user: root
   tasks: 
    - name: Installing Apache Tomcat
      get_url: 
@@ -27,8 +28,8 @@
        line: "export CATALINA_HOME=/usr/local/tomcat9"
      tags: insert
 
-   - name: sourceing 
-     command: source /home/ansadm/.bashrc
+   - name: source bashrc
+     shell: source /home/ansadm/.bashrc && /usr/local/tomcat9/bin/startup.sh
      tags: source
 
    - name: running apache tomact server
