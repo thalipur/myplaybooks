@@ -1,0 +1,42 @@
+---
+- name: This playbook will be used to install Jenkins
+  hosts: all
+  become: true
+#  bicome_method: sudo
+  become_user: root
+  tasks:
+   - name: This module will install jenkins
+     yum_repository:
+       name: jenkins-Repo 
+       description: EPEL YUM repo
+       baseurl: http://pkg.jenkins.io/redhat-stable
+       gpgcheck: 0
+     tags:
+       - rep-add
+        
+   - name: This will install jenkins
+     yum:
+       name: jenkins*
+       state: present
+#       enabled: yes
+     tags:
+      - jenkins-install
+   - name: uninstalling jenkins
+     yum:
+       name: jenkins*
+       state: absent
+     tags: jenkins-uninstall
+
+   - name: Java Installation
+     yum:
+       name: java
+       state: present 
+
+
+   - name: Start Jenkins service
+     service:
+       name: jenkins
+       state: restarted
+     tags:
+       - service
+
