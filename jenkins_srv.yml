@@ -2,7 +2,7 @@
 - name: This playbook will be used to install Jenkins
   hosts: all
   become: true
-#  bicome_method: sudo
+#  become_method: sudo
   become_user: root
   tasks:
    - name: This module will install jenkins
