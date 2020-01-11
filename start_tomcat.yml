@@ -1,0 +1,11 @@
+---
+- name: Start the Tomcat server
+  hosts: appserver
+#  become: true
+#  become_method: sudo
+#  become_user: root
+  tasks:
+#   - name: Start tomcat
+#     shell: sh /usr/local/tomcat9/bin/startup.sh > tomcat.txt
+    - name: start tomcat
+      local_action: command sudo sh /usr/local/tomcat9/bin/startup.sh

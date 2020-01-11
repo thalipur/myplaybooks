@@ -39,7 +39,7 @@
     shell: source /home/ansadm/.bashrc
     tags: source
 
-  - name:  starting tomcat server
+  - name: starting tomcat server
     shell: /usr/local/tomcat9/bin/startup.sh
     tags: tomcat
 
